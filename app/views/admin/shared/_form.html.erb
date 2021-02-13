@@ -1,7 +1,9 @@
 <h4>In Form Partial</h4>
 
 <%= form_with model: [:admin, @category] do |f| %>
+  
   <%= f.hidden_field :category_id, value: params[:type] == "subcategory"? params[:category_id] : nil %>
+
   <%= f.text_field :name, placeholder: "Enter Category name.." %>
 
   <br> <br>
