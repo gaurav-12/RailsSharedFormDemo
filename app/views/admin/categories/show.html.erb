@@ -1,0 +1,25 @@
+<h3>Categories Show</h3>
+
+<%= link_to "Add SubCategory", new_admin_category_path(category_id: params[:id], type: "subcategory") %>
+  
+<br><br>
+
+<table border=1>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+  <% @subcategories.each do |c| %>
+    <tr>
+
+      <th><%= c.id %></th>
+      <td><%= c.name %></td>
+      <td><%= link_to "Edit", edit_admin_category_path(c.id, category_id: c.category_id, type: "subcategory") %></td>
+      <td><%= link_to "Delete", admin_category_path(c.id),
+        method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+</table
+
