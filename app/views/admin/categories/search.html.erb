@@ -1,0 +1,22 @@
+<h3>Categories Search</h3>
+
+<%= form_with method: :get, id: "search_form" do |form| %>
+  <%= form.text_field :query, placeholder: "Search for..", id: "search_query" %>
+  <br><br>
+  <%= form.submit "Search" %>
+<% end %>
+
+<br><br>
+<table border=1>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+  </tr>
+
+  <% @categories.each do |c| %>
+    <tr>
+      <th><%= c.id %></th>
+      <td><%= c.name %></td>
+    </tr>
+  <% end %>
+</table>

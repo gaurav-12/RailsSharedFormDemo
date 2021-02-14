@@ -46,6 +46,7 @@ input[type=submit] {
 	border: none;
 	padding: 15px 20px;
 	font-weight: bold;
+	color: black;
 	cursor: pointer;
 	text-transform: uppercase;
 }

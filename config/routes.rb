@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'admin', to: redirect('admin/categories')
   namespace :admin do
+    get 'categories/search'
     resources :categories
   end
 end

@@ -64,4 +64,8 @@ class Admin::CategoriesController < ApplicationController
       redirect_to path
     end
   end
+
+  def search
+    @categories = Category.where("name LIKE ?", "#{params[:query]}%")
+  end
 end

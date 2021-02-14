@@ -1,11 +1,13 @@
 <h3>Categories Index</h1>
 <%= link_to "Add Category", new_admin_category_path %>
+<%= link_to "Search Categories", admin_categories_search_path %>
 
 <br><br>
 
 <table border=1>
   <tr>
     <th>Name</th>
+    <th>SubCategories</th>
     <th>View</th>
     <th>Edit</th>
     <th>Destroy</th>
@@ -13,6 +15,7 @@
   <% @categories.each do |c| %>
     <tr>
       <td><%= c.name %></td>
+      <td><%= c.subcategories.size %></td>
       <td><%= link_to "View", admin_category_path(c.id) %></th>
       <td><%= link_to "Edit", edit_admin_category_path(c.id) %></td>
       <td><%= link_to "Delete", admin_category_path(c.id),
